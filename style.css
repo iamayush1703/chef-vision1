@@ -1,4 +1,9 @@
 /* ===== Global Reset & Styles ===== */
+@media screen and (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
 * {
   margin: 0;
   padding: 0;
