@@ -1,9 +1,4 @@
-/* ===== Global Reset & Styles ===== */
-@media screen and (max-width: 768px) {
-  body {
-    background-color: lightblue;
-  }
-}
+/* ===== Global Reset & Base Styles ===== */
 * {
   margin: 0;
   padding: 0;
@@ -42,6 +37,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 0;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -54,6 +50,8 @@ body {
   list-style: none;
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-list a {
@@ -107,7 +105,7 @@ body {
   opacity: 0.9;
 }
 
-/* ===== Search Form ===== */
+/* ===== Search Section ===== */
 .search-section {
   margin: -40px auto 40px;
   background: #fff;
@@ -269,15 +267,13 @@ body {
   padding: 25px;
   max-width: 650px;
   width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
   border-radius: 16px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.3);
   position: relative;
   transform: translateY(-20px);
   transition: transform 0.3s ease;
-}
-.modal-content {
-  max-height: 80vh;
-  overflow-y: auto;
 }
 
 .modal.show .modal-content {
@@ -312,7 +308,7 @@ body {
   margin-top: 40px;
   padding: 20px;
   text-align: center;
-  background:lightcoral;
+  background: lightcoral;
   color: #fff;
   font-size: 0.9rem;
 }
@@ -360,20 +356,8 @@ body.dark-mode .footer {
 body.dark-mode .why-us-section h2 {
   color: #ff7043;
 }
-.cut-btn {
-  background: black;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 18px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.cut-btn:hover {
-  background: white;
-}
+
+/* ===== Buttons ===== */
 .cut-btn {
   background: transparent;
   color: #ff5722;
@@ -397,6 +381,8 @@ body.dark-mode .cut-btn {
 body.dark-mode .cut-btn:hover {
   color: #ff7043;
 }
+
+/* ===== Logo ===== */
 .chef-logo {
   display: block;
   margin: 0 auto 10px auto;
@@ -406,3 +392,51 @@ body.dark-mode .cut-btn:hover {
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
 
+/* ===== Responsive Media Queries ===== */
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+  .hero h2 { font-size: 1.7rem; }
+  .hero p { font-size: 1rem; }
+  .nav-container { flex-direction: column; gap: 10px; }
+}
+
+/* Mobiles */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .toggle-theme { margin-top: 10px; }
+  .hero { padding: 40px 15px; }
+  .hero h2 { font-size: 1.5rem; }
+  .hero p { font-size: 0.95rem; }
+  .search-form { flex-direction: column; }
+  .recipe-card img { height: 150px; }
+  .modal-content { width: 95%; padding: 18px; }
+  .why-us-grid { grid-template-columns: 1fr; }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+  .logo { font-size: 1.3rem; }
+  .hero h2 { font-size: 1.3rem; }
+  .hero p { font-size: 0.9rem; }
+  .search-form input,
+  .search-form select,
+  .search-form button {
+    font-size: 0.9rem;
+    padding: 10px;
+    width: 100%;
+  }
+  .recipe-card h3 { font-size: 1rem; }
+  .recipe-card button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+  .footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
